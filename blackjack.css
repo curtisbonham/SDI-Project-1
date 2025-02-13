@@ -10,7 +10,6 @@ ul, li {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  column-gap: 10px;
   background: #eee;
 }
 
@@ -18,12 +17,14 @@ header {
   grid-column: span 2;
   justify-items: center;
   border-bottom: 1px solid black;
+  background: darkslategray;
+  color: darkgray;
 }
 
 sidebar{
   padding: 30px;
   border-right: 1px solid black;
-  background: green;
+  background: dimgray;
   grid-row-start: 2;
   grid-row: span 3;
 }
@@ -39,6 +40,7 @@ sidebar li {
 section {
   padding: 30px;
   justify-items: center;
+  background: darkolivegreen;
 }
 
 section h1{
@@ -81,6 +83,8 @@ footer {
   grid-column: span 2;
   text-align: center;
   border-top: 1px solid black;
+  background: darkslategray;
+  color: darkgray;
 }
 
 
