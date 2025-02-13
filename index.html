@@ -22,7 +22,19 @@
     </sidebar>
     <section>
       <h1>Blackjack</h1>
-      <img src="./cards/7-D.png" alt="back_of_playing_card">
+      <h2>Dealer: <span id="dealer-sum"></span></h2>
+      <div id="dealer-cards">
+        <img id="hidden" src="./cards/BACK.png">
+      </div>
+      <h2>Player: <span id="player-sum"></span></h2>
+      <div id="player-cards"></div>
+
+      <br>
+      <button id="hit">Hit</button>
+      <button id="stay">Stay</button>
+      <br>
+      <button id="play-again">Play Again?</button>
+      <p id="results"></p>
     </section>
     <footer>
       <p>Copyright 2025; Author: Curtis Bonham </p>

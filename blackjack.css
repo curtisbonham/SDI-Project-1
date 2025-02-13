@@ -46,26 +46,13 @@ section h1{
   max-width: 800px;
 }
 
-footer {
-  grid-column: span 2;
-  text-align: center;
-  border-top: 1px solid black;
-}
-
-
-
-
-/* .cryptoSidebar{
-  align-content: left;
-}
-
 #dealer-cards img {
   height: 175px;
   width: 125px;
   margin: 1px;
 }
 
-#your-cards img {
+#player-cards img {
   height: 175px;
   width: 125px;
   margin: 1px;
@@ -82,9 +69,22 @@ footer {
   height: 50px;
   font-size: 20px;
 }
-#play_again {
-  width: 150px;
+
+#play-again {
+  width: 200px;
   height: 50px;
   font-size: 20px;
   margin-top: 10px;
-} */
+}
+
+footer {
+  grid-column: span 2;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+
+
+
+
+
