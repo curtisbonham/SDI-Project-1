@@ -5,14 +5,24 @@ Problem statement: Creating a website where someone can come and play a few game
 
 Blackjack Crypto is more than just a game website! Sure, it's a place where anyone can come play or practice some hands of blackjack, but you can also monitor the top 5 crypto currencies. You can beat the dealer, then beat the market with up-to-date information!
 
+## Instructions
+1. To start the game, press the **PLAY** button.
+      * You will be presented with two cards face up and the dealer will present a card face down and one face up.
+2. Next, make a choice if you want to hit or stay based on your score.
+      * Remember you are trying to get as close to 21 as possible without going over, otherwise you **bust** and you **lose**!
+3. If you would like another card, press the **HIT** button.
+      * Your score will increment and hopefully you have not **BUSTED!!**
+4. If or when you like your score, press the **STAY** button.
+      * This will cause the dealer to reveal their face down card. If their score is less than 17, they will hit again and continue to hit until they bust or reach a score between 17 and 21.
+5. If your score is higher than the dealer's score or the dealer has gone over 21, **YOU WIN!!** However, if the dealer's score is higher than your score or you went over 21, **YOU LOSE!!**
+6. If you want to play again, simply press the **PLAY AGAIN** button and the game will restart and the dealer will keep track of your wins and losses!
+
+```
+```
+
 ## Kaban Board
 
 Follow this link to view my [Kaban](https://trello.com/b/hgI3Bp42/sdi-project-1) board.
-
-## Usage
-
-```
-```
 
 ## Contributing
 

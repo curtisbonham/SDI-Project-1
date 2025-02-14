@@ -60,6 +60,10 @@ const getCardValue = (cardData) => {
           return 10;
         }
         if(!isNaN(value)){
+          if(value === "0"){
+            console.log(10);
+          return 10;
+          }
           console.log(parseInt(value))
           return parseInt(value);
         }
