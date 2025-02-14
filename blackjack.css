@@ -88,10 +88,11 @@ section h1{
 
 footer {
   grid-column: span 2;
-  text-align: center;
+  text-align: start;
   border-top: 1px solid black;
   background: darkslategray;
   color: darkgray;
+  padding: 10px;
 }
 
 

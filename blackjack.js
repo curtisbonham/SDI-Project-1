@@ -29,7 +29,8 @@
 //https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/<<pile_name>>/draw/bottom/
 //https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/<<pile_name>>/draw/random/
 
-const playBtn = document.getElementById("playBtn");
+
+// const playBtn = document.getElementById("playBtn");
 
 let dealerSum = 0;
 let playerSum = 0;
@@ -42,6 +43,12 @@ let deck;
 let deckId;
 
 let canHit = true;
+
+// window.onload = function() {
+//   drawNewCards();
+//   getCardValue();
+//   playGame();
+// }
 
 //function to shuffle a deck of cards and draw 2 cards
 const drawNewCards = () =>{
@@ -60,18 +67,48 @@ const drawNewCards = () =>{
           }
           return response.json();
         })
-        .then(drawCards => {return drawCards})
+        .then(drawCards => getCardValue(drawCards))
     })
 }
 
-const play = () => {
-  drawNewCards();
-  document.getElementById('dealer-cards')
-  document.querySelector('dealer-cards').innerHTML = drawCards;
+const getCardValue = (drawCards) => {
+  let cardCode = [];
+  for(let key in drawCards){
+    for(let subKey in drawCards[key]){
+      if (drawCards[key][subKey].code === undefined){
+        continue;
+      }
+      cardCode.push(drawCards[key][subKey].code[0])}
+    }
 
+    cardCode.forEach(value => {
+      if (isNaN(value)){
+        if (value === "A"){
+          console.log(11)
+          return 11;
+        }
+        console.log(10)
+        return 10;
+      }
+      if(!isNaN(value)){
+        console.log(parseInt(value))
+        return parseInt(value);
+      }
+    })
+  }
+
+const playGame = (value) => {
+  // document.getElementById('dealer-cards')
+  // document.querySelector('dealer-cards').innerHTML = value;
 }
 
-playBtn.addEventListener("click", play());
+
+drawNewCards();
+getCardValue();
+playGame();
+// playBtn.addEventListener("click", play());
+
+
 
 
 
