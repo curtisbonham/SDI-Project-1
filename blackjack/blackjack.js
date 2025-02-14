@@ -32,7 +32,7 @@ newGameArea.style.display = "none";
 startPlayArea.addEventListener("click", () => getNewDeck());
 newGameArea.addEventListener("click", () => newGame());
 hitArea.addEventListener("click", () => hit("player"));
-stayArea.addEventListener("click", () => setTimeout(() => dealersTurn(), 600));
+stayArea.addEventListener("click", () => setTimeout(() => dealersTurn(), 1000));
 
 const resetPlayingArea = () => {
   dealerCards = [];
@@ -63,7 +63,7 @@ const newGame = () => {
 
     dealerCards.forEach((card, i) => {
       let cardImage = document.createElement("img");
-      if(i==0) {
+      if(i===0) {
         cardImage.src ='./card.png'
       } else {
         cardImage.src = card.image;
@@ -80,7 +80,7 @@ const newGame = () => {
     playerScore = calculateScore(playerCards);
     if(playerScore === 21) {
       roundWon = true;
-      resultsArea.textContent = "Blackjack! You win the hand!"
+      resultsArea.textContent = "Blackjack! Winner! Winner! Chicken Dinner!"
     }
     playerScoreArea.textContent = playerScore;
 })
@@ -132,17 +132,17 @@ const dealersTurn = () => {
   if (roundLost || roundWon || roundTied) {return}
   dealerScore = calculateScore(dealerCards);
   dealerScoreArea.textContent = dealerScore;
-  dealerScoreArea.firstChild.src = dealerCards[0].image;
+  dealerCardsArea.firstChild.src = dealerCards[0].image;
   if (dealerScore < 17) {
-    setTimeout(()=>hitMe('dealer'), 900)
+    setTimeout(()=>hit('dealer'), 9000)
   }
   else if (dealerScore > 21) {
     roundWon = true;
-    resultsArea.textContent = "House broke. You Won the hand!";
+    resultsArea.textContent = "Dealer busted!! You Win the hand!";
   }
   else if (dealerScore > playerScore) {
     roundLost = true;
-    resultsArea.textContent = "You Lost the hand...";
+    resultsArea.textContent = " Dealer's score is higher. You Lost the hand...";
   }
   else if (dealerScore === playerScore) {
     roundTied = true;
@@ -170,105 +170,6 @@ const calculateScore = (cards) => {
   return score
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-// getCardData();
-// // getCardValue();
-// // getCardImage();
-// // playGame();
-// //function to shuffle a deck of cards and draw 2 cards
-// const getCardData = () =>{
-//   fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6')
-//    .then(response => {
-//     if(!response.ok){
-//       throw new Error(`HTTP error! Status: ${response.status}`);
-//     }
-//     return response.json();
-//   })
-//    .then(getDeckId => {
-//       fetch(`https://deckofcardsapi.com/api/deck/${getDeckId.deck_id}/draw/?count=2`)
-//         .then(response => {
-//           if(!response.ok){
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//           }
-//           return response.json();
-//         })
-//         .then(cardData => {
-//           getCardValue(cardData)
-//           getCardImage(cardData)
-//           return cardData})
-//     })
-// }
-
-// const getCardValue = (cardData) => {
-//     let cardCode = [];
-//       for(let key in cardData){
-//         for(let subKey in cardData[key]){
-//           if (cardData[key][subKey].code === undefined){
-//             continue;
-//           }
-//           cardCode.push(cardData[key][subKey].code[0])}
-//         }
-//       cardCode.forEach(value => {
-//         if (isNaN(value)){
-//           if (value === "A"){
-//             console.log(11)
-//             return 11;
-//           }
-//           console.log(10)
-//           return 10;
-//         }
-//         if(!isNaN(value)){
-//           if(value === "0"){
-//             console.log(10);
-//           return 10;
-//           }
-//           console.log(parseInt(value))
-//           return parseInt(value);
-//         }
-//       })
-//     }
-
-// const getCardImage = (cardData) => {
-//   cardImage = [];
-//   for(let key in cardData){
-//     for(let subKey in cardData[key]){
-//       if (cardData[key][subKey].image === undefined){
-//         continue;
-//       }
-//       cardImage.push(cardData[key][subKey].image)}
-//     }
-//     return cardImage;
-// }
-
-// const playGame = () => {
-//   getCardData();
-//   getCardValue();
-//   getCardImage();
-//   let dealerCardImg = document.getElementById('dealer-cards');
-//   dealerCardImg.className = "d-cards";
-//   dealerCardImg.appendChild(document.createElement('img'));
-//   let dealerCards = document.querySelector('dealer-cards')
-//   dealerCards.appendChild(dealerCardImg);
-//   document.querySelector('.d-cards').src = cardImage;
-
-//   let playerCardImg = document.getElementById('player-cards');
-//   playerCardImg.className = "p-cards";
-//   playerCardImg.appendChild(document.createElement('img'));
-//   let playerCards = document.querySelector('player-cards')
-//   playerCards.appendChild(playerCardImg);
-//   document.querySelector('.p-cards').src = cardImage[0];
-// }
 
 
 

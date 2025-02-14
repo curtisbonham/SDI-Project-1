@@ -50,6 +50,14 @@ sidebar li {
 
 }
 
+#resultsArea {
+  font-size: 50px;
+  width: 100%;
+  color: orange;
+  grid-column: 2 / span 2;
+  justify-items: center;
+}
+
 #dealerArea {
   justify-items: center;
 }
@@ -109,12 +117,7 @@ sidebar li {
 #newGameBtn {
   width: 205px;
 }
-#results {
-  font-size: 60px;
-  color: orange;
-  grid-column: 2 / span 2;
-  justify-self: end;
-}
+
 
 footer {
   grid-column: 1/span 3;
