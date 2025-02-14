@@ -51,7 +51,7 @@ let canHit = true;
 // }
 
 //function to shuffle a deck of cards and draw 2 cards
-const drawNewCards = () =>{
+const getCardData = () =>{
   fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6')
    .then(response => {
     if(!response.ok){
@@ -67,35 +67,44 @@ const drawNewCards = () =>{
           }
           return response.json();
         })
-        .then(drawCards => getCardValue(drawCards))
+        .then(cardData => {return cardData})
     })
 }
 
-const getCardValue = (drawCards) => {
-  let cardCode = [];
-  for(let key in drawCards){
-    for(let subKey in drawCards[key]){
-      if (drawCards[key][subKey].code === undefined){
-        continue;
-      }
-      cardCode.push(drawCards[key][subKey].code[0])}
-    }
-
-    cardCode.forEach(value => {
-      if (isNaN(value)){
-        if (value === "A"){
-          console.log(11)
-          return 11;
+const getCardValue = async () => {
+  try {
+    let cardCode = [];
+    const fetchedCardData = getCardData();
+    fetchedCardData.then(cardData => {
+      for(let key in cardData){
+        for(let subKey in cardData[key]){
+          if (cardData[key][subKey].code === undefined){
+            continue;
+          }
+          cardCode.push(cardData[key][subKey].code[0])}
         }
-        console.log(10)
-        return 10;
-      }
-      if(!isNaN(value)){
-        console.log(parseInt(value))
-        return parseInt(value);
-      }
-    })
-  }
+      })
+
+      cardCode.forEach(value => {
+        if (isNaN(value)){
+          if (value === "A"){
+            console.log(11)
+            console.log(11)
+            return 11;
+          }
+          console.log(10)
+          console.log(10)
+          return 10;
+        }
+        if(!isNaN(value)){
+          console.log(parseInt(value))
+          return parseInt(value);
+        }
+      })
+    } catch (error) {
+      console.error(`Could not get products: ${error}`);
+    }
+    }
 
 const playGame = (value) => {
   // document.getElementById('dealer-cards')
@@ -103,7 +112,7 @@ const playGame = (value) => {
 }
 
 
-drawNewCards();
+// drawNewCards();
 getCardValue();
 playGame();
 // playBtn.addEventListener("click", play());
