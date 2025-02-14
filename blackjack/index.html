@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDI Project 1</title>
+  <title>Blackjack Crypto</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -23,22 +23,27 @@
       <li>Crypto display 4</li>
       <li>Crypto display 5</li>
     </sidebar>
-    <section>
-      <h1>Blackjack</h1>
-
-      <h2>Dealer: <span id="dealer-sum"></span></h2>
-      <div id="dealer-cards">
-        <img id="hidden" src="https://deckofcardsapi.com/static/img/back.png">
+    <section id="gameArea">
+      <div id="startBtnArea">
+        <button class="button" id="startPlayBtn">Start Game</button>
       </div>
-      <h2>Player: <span id="player-sum"></span></h2>
-      <div id="player-cards"></div>
-      <br>
-      <button id="playBtn">Play</button>
-      <br>
-      <button id="hitBtn">Hit</button>
-      <button id="stayBtn">Stay</button>
-      <br>
-      <button id="play-againBtn">Play Again?</button>
+      <div id="dealerArea">
+          <h2>Dealer: <span id="dealerSum"></span></h2>
+          <div id="dealerCards">
+
+          </div>
+      </div>
+          <div id="playerArea">
+          <h2>Player: <span id="playerSum"></span></h2>
+          <div id="playerCards">
+
+          </div>
+      </div>
+      <div id="buttonArea">
+        <button class="button" id="hitBtn">Hit</button>
+        <button class="button" id="stayBtn">Stay</button>
+        <button class="button" id="newGameBtn">Next Hand</button>
+      </div>
       <p id="results"></p>
     </section>
     <footer>

@@ -12,7 +12,6 @@ ul, li {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background: #eee;
 }
 
 header {
@@ -39,53 +38,70 @@ sidebar li {
   text-decoration: underline;
 }
 
-section {
+#gameArea {
   padding: 30px;
-  justify-items: center;
   background: darkolivegreen;
+  justify-items: center;
 }
 
-section h1{
-  font-size: 2.5em;
-  max-width: 800px;
+#dealerArea {
+  justify-items: center;
 }
 
-#dealer-cards img {
+#playerArea {
+  justify-items: center;
+}
+
+#startBtnArea {
+  justify-self: start;
+}
+
+#buttonArea{
+  display: flex;
+  justify-self: end;
+  flex-direction: column;
+
+}
+
+#dealerCards {
+  display:flex;
   height: 175px;
   width: 125px;
   margin: 1px;
 }
 
-#player-cards img {
+#playerCards {
+  display:flex;
   height: 175px;
   width: 125px;
   margin: 1px;
 }
 
-#playBtn {
-  width: 205px;
+.button{
   height: 50px;
   font-size: 20px;
-  margin-bottom: 10px;
+  width: 200px;
+  background-color: limegreen;
+  -webkit-box-shadow: inset 0px 0px 14px 5px black;
+  -moz-box-shadow: inset 0px 0px 14px 5px black;
+  box-shadow: inset 0px 0px 14px 5px black;
+}
+#startPlayBtn {
+  width: 150px;
+  grid-column-start: 1 / span 2;
 }
 
 #hitBtn {
-  width: 100px;
-  height: 50px;
-  font-size: 20px;
+  grid-row-start: 1;
 }
 
 #stayBtn {
-  width: 100px;
-  height: 50px;
-  font-size: 20px;
+  grid-row-start: 1;
+  margin: 50px 0 50px 0;
 }
 
-#play-againBtn {
+#newGameBtn {
   width: 205px;
-  height: 50px;
-  font-size: 20px;
-  margin-top: 10px;
 }
 
 footer {
