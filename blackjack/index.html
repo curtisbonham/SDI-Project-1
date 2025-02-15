@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./blackjack.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class = "grid-container">
     <header>
       <h1>Blackjack Crypto</h1>
     </header>
-    <sidebar>
+    <sidebar class="crypto">
       <h1>Crypto Currency Updates</h1>
       <p>Categories</p>
       <li>Crypto display 1</li>
@@ -23,7 +23,7 @@
       <li>Crypto display 4</li>
       <li>Crypto display 5</li>
     </sidebar>
-    <section id="gameArea">
+    <section class="gameArea">
       <div id="startBtnArea">
         <button class="button" id="startPlayBtn">Start New Game</button>
       </div>
@@ -39,15 +39,15 @@
           <div id="playerCards"></div>
       </div>
     </section>
-    <div id="buttonArea">
-      <div id="winLossArea">
-        <h3>Wins:<p id="winsArea"></p></h3>
-       <h3>Losses:<p id="lossesArea"></p></h3>
+    <div class="buttonArea">
+      <div class="winLossArea">
+        <h3 id="wins">Wins:<h3 id="winsArea"></h3></h3>
+        <h3 id="losses">Losses:<h3 id="lossesArea"></h3></h3>
+      </div class="buttons">
+        <button class="button" id="hitBtn">Hit</button>
+        <button class="button" id="stayBtn">Stay</button>
+        <button class="button" id="newGameBtn">Next Hand</button>
       </div>
-      <button class="button" id="hitBtn">Hit</button>
-      <button class="button" id="stayBtn">Stay</button>
-      <button class="button" id="newGameBtn">Next Hand</button>
-    </div>
     <footer>
       <p>Copyright&copy; 2025: Author: Curtis Bonham </p>
     </footer>

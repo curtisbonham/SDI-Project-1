@@ -17,22 +17,8 @@ Blackjack Crypto is more than just a game website! Sure, it's a place where anyo
       * This will cause the dealer to reveal their face down card. If their score is less than 17, they will hit again and continue to hit until they bust or reach a score between 17 and 21.
 5. If your score is higher than the dealer's score or the dealer has gone over 21, **YOU WIN!!** However, if the dealer's score is higher than your score or you went over 21, **YOU LOSE!!**
 6. If you want to play again, simply press the **NEXT HAND** button and the game will restart and the dealer will keep track of your wins and losses!
-      * If you happen to run out of cards, simply press teh **START NEW GAME** button and then **NEXT HAND** to keep on playing. 
-
-```
-```
+      * If you happen to run out of cards, simply press teh **START NEW GAME** button and then **NEXT HAND** to keep on playing.
 
 ## Kaban Board
 
 Follow this link to view my [Kaban](https://trello.com/b/hgI3Bp42/sdi-project-1) board.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

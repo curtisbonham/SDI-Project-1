@@ -17,27 +17,30 @@ let playerScoreArea = document.getElementById("playerScore");
 let dealerCardsArea = document.getElementById("dealerCards");
 let playerCardsArea = document.getElementById("playerCards");
 
+//Buttons
+let startPlayBtn = document.getElementById("startPlayBtn");
+let newGameBtn = document.getElementById("newGameBtn");
+let hitBtn = document.getElementById("hitBtn");
+let stayBtn = document.getElementById("stayBtn");
+
 //other areas
 let resultsArea = document.getElementById("results");
-let startPlayArea = document.getElementById("startPlayBtn");
-let newGameArea = document.getElementById("newGameBtn");
-let hitArea = document.getElementById("hitBtn");
-let stayArea = document.getElementById("stayBtn");
-let winLossArea = document.getElementById("winLossArea")
 let winsCountArea = document.getElementById("winsArea")
 let lossesCountArea = document.getElementById("lossesArea")
-hitArea.style.display = "none";
-stayArea.style.display = "none";
-newGameArea.style.display = "none";
-winLossArea.style.display = "block";
-lossesCountArea.style.display = "block";
+hitBtn.style.display = "none";
+stayBtn.style.display = "none";
+newGameBtn.style.display = "none";
 
+//disable hit button
+document.getElementById("hitBtn").disabled = true;
 
 //on-click events
-startPlayArea.addEventListener("click", () => getNewDeck());
-newGameArea.addEventListener("click", () => newGame());
-hitArea.addEventListener("click", () => hit("player"));
-stayArea.addEventListener("click", () => setTimeout(() => dealersTurn(), 1000));
+startPlayBtn.addEventListener("click", () => getNewDeck());
+newGameBtn.addEventListener("click", () => newGame());
+hitBtn.addEventListener("click", () => hit("player"));
+stayBtn.addEventListener("click", () => {
+  document.getElementById("hitBtn").disabled = true;
+  setTimeout(() => dealersTurn(), 1000)});
 
 const resetPlayingArea = () => {
   dealerCards = [];
@@ -51,11 +54,11 @@ const resetPlayingArea = () => {
   resultsArea.textContent = "";
   dealerCardsArea.textContent = "";
   playerCardsArea.textContent = "";
+  document.getElementById("hitBtn").disabled = false;
 }
 
 const newGame = () => {
   resetPlayingArea();
-
   fetch(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=4`)
     .then(response => response.json())
     .then(cardData => {
@@ -64,8 +67,8 @@ const newGame = () => {
 
     dealerScore = "?";
     dealerScoreArea.textContent = dealerScore;
-    hitArea.style.display = "block";
-    stayArea.style.display = "block";
+    hitBtn.style.display = "block";
+    stayBtn.style.display = "block";
 
     dealerCards.forEach((card, i) => {
       let cardImage = document.createElement("img");
@@ -103,9 +106,9 @@ const getNewDeck = () => {
   .then(response => response.json())
   .then(getDeckID => {
     deckID = getDeckID.deck_id;
-    newGameArea.style.display = "block";
-    hitArea.style.display = "none";
-    stayArea.style.display = "none";
+    newGameBtn.style.display = "block";
+    hitBtn.style.display = "none";
+    stayBtn.style.display = "none";
   })
   .catch(console.error)
 }
@@ -141,7 +144,6 @@ const hit = (target) => {
 }
 
 const dealersTurn = () => {
-  // if (roundLost || roundWon || roundTied) {return}
   dealerScore = calculateScore(dealerCards);
   dealerScoreArea.textContent = dealerScore;
   dealerCardsArea.firstChild.src = dealerCards[0].image;
