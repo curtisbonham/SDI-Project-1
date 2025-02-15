@@ -2,7 +2,7 @@ let deckID = "";
 let dealerCards = [];
 let playerCards = [];
 let dealerScore = "";
-let playerScore = 0;
+let playerScore = "";
 let roundWon = false;
 let roundLost = false;
 let roundTied = false;
@@ -31,9 +31,6 @@ hitBtn.style.display = "none";
 stayBtn.style.display = "none";
 newGameBtn.style.display = "none";
 
-//disable hit button
-document.getElementById("hitBtn").disabled = true;
-
 //on-click events
 startPlayBtn.addEventListener("click", () => getNewDeck());
 newGameBtn.addEventListener("click", () => newGame());
@@ -49,8 +46,9 @@ const resetPlayingArea = () => {
   roundLost = false;
   roundTied = false;
   dealerScore = "";
-  playerScore = 0;
+  playerScore = "";
   dealerScoreArea.textContent = dealerScore;
+  playerScoreArea.textContent = playerScore;
   resultsArea.textContent = "";
   dealerCardsArea.textContent = "";
   playerCardsArea.textContent = "";
