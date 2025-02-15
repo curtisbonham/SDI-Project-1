@@ -6,9 +6,8 @@ let playerScore = 0;
 let roundWon = false;
 let roundLost = false;
 let roundTied = false;
-
-let dealerAceCount = 0;
-let playerAceCount = 0;
+let lossCount = 0;
+let winCount = 0;
 
 //score displays areas
 let dealerScoreArea = document.getElementById("dealerScore");
@@ -24,9 +23,15 @@ let startPlayArea = document.getElementById("startPlayBtn");
 let newGameArea = document.getElementById("newGameBtn");
 let hitArea = document.getElementById("hitBtn");
 let stayArea = document.getElementById("stayBtn");
+let winLossArea = document.getElementById("winLossArea")
+let winsCountArea = document.getElementById("winsArea")
+let lossesCountArea = document.getElementById("lossesArea")
 hitArea.style.display = "none";
 stayArea.style.display = "none";
 newGameArea.style.display = "none";
+winLossArea.style.display = "block";
+lossesCountArea.style.display = "block";
+
 
 //on-click events
 startPlayArea.addEventListener("click", () => getNewDeck());
@@ -50,6 +55,9 @@ const resetPlayingArea = () => {
 
 const newGame = () => {
   resetPlayingArea();
+  winCount = 0;
+  lossCount = 0;
+
   fetch(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=4`)
     .then(response => response.json())
     .then(cardData => {
@@ -81,6 +89,7 @@ const newGame = () => {
     if(playerScore === 21) {
       roundWon = true;
       resultsArea.textContent = "Blackjack! Winner! Winner! Chicken Dinner!"
+      incrementWinLoss();
     }
     playerScoreArea.textContent = playerScore;
 })
@@ -115,6 +124,7 @@ const hit = (target) => {
   if (playerScore > 21) {
     roundLost = true;
     resultsArea.textContent = "You busted!! You lose the hand!!"
+    incrementWinLoss();
   }
 }
   if(target === "dealer"){
@@ -134,23 +144,27 @@ const dealersTurn = () => {
   dealerScoreArea.textContent = dealerScore;
   dealerCardsArea.firstChild.src = dealerCards[0].image;
   if (dealerScore < 17) {
-    setTimeout(()=>hit('dealer'), 9000)
+    setTimeout(()=>hit('dealer'), 900)
   }
   else if (dealerScore > 21) {
     roundWon = true;
     resultsArea.textContent = "Dealer busted!! You Win the hand!";
+    incrementWinLoss();
   }
   else if (dealerScore > playerScore) {
     roundLost = true;
     resultsArea.textContent = " Dealer's score is higher. You Lost the hand...";
+    incrementWinLoss();
   }
   else if (dealerScore === playerScore) {
     roundTied = true;
-    resultsArea.textContent = "Tie round...";
+    resultsArea.textContent = "Push this round.";
+    incrementWinLoss();
   }
   else {
     roundWon = true;
     resultsArea.textContent = "You Win the hand!";
+    incrementWinLoss();
   }
 }
 
@@ -170,8 +184,16 @@ const calculateScore = (cards) => {
   return score
 }
 
-
-
+const incrementWinLoss = () => {
+  if (roundLost){
+    lossCount++;
+    lossesCountArea.textContent = lossCount;
+  }
+  if (roundWon){
+    winCount++;
+    winsCountArea.textContent = winCount;
+  } else if (roundTied) {return}
+}
 
 
 
