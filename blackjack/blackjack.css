@@ -74,26 +74,23 @@ sidebar li {
   grid-column-start: 3;
   grid-row-start: 2;
   background: darkolivegreen;
-  border: 1px solid black;
-}
-
- #winLossArea {
-  grid-column: 3;
-  grid-row: 2;
-  align-self: start;
-  font-size: 18px;
-  color: darkgray;
-  margin-bottom: 100px;
 }
 
 #winLossArea  {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  margin-right: 30px;
-  justify-content: end;
-  font-size: 18px;
+  width: 300px;
+  font-size: 14px;
   color: darkgray;
+}
+
+#winsArea {
+  grid-column: 2;
+}
+
+#lossesArea {
+  grid-column: 2;
 }
 
 #dealerCards {

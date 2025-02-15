@@ -55,8 +55,6 @@ const resetPlayingArea = () => {
 
 const newGame = () => {
   resetPlayingArea();
-  winCount = 0;
-  lossCount = 0;
 
   fetch(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=4`)
     .then(response => response.json())
@@ -89,15 +87,18 @@ const newGame = () => {
     if(playerScore === 21) {
       roundWon = true;
       resultsArea.textContent = "Blackjack! Winner! Winner! Chicken Dinner!"
-      incrementWinLoss();
+      incrementWinLoss(roundWon);
     }
     playerScoreArea.textContent = playerScore;
+
 })
 .catch(console.error)
 }
 
 const getNewDeck = () => {
   resetPlayingArea();
+  winCount = 0;
+  lossCount = 0;
   fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6')
   .then(response => response.json())
   .then(getDeckID => {
@@ -124,8 +125,9 @@ const hit = (target) => {
   if (playerScore > 21) {
     roundLost = true;
     resultsArea.textContent = "You busted!! You lose the hand!!"
-    incrementWinLoss();
+    incrementWinLoss(roundLost);
   }
+
 }
   if(target === "dealer"){
     let cardImage = document.createElement("img");
@@ -135,11 +137,11 @@ const hit = (target) => {
     dealersTurn();
   }
 })
-.catch(console.log)
+.catch(console.error)
 }
 
 const dealersTurn = () => {
-  if (roundLost || roundWon || roundTied) {return}
+  // if (roundLost || roundWon || roundTied) {return}
   dealerScore = calculateScore(dealerCards);
   dealerScoreArea.textContent = dealerScore;
   dealerCardsArea.firstChild.src = dealerCards[0].image;
@@ -149,23 +151,23 @@ const dealersTurn = () => {
   else if (dealerScore > 21) {
     roundWon = true;
     resultsArea.textContent = "Dealer busted!! You Win the hand!";
-    incrementWinLoss();
+    incrementWinLoss(roundWon);
   }
   else if (dealerScore > playerScore) {
     roundLost = true;
     resultsArea.textContent = " Dealer's score is higher. You Lost the hand...";
-    incrementWinLoss();
+    incrementWinLoss(roundLost);
   }
   else if (dealerScore === playerScore) {
     roundTied = true;
     resultsArea.textContent = "Push this round.";
-    incrementWinLoss();
   }
   else {
     roundWon = true;
     resultsArea.textContent = "You Win the hand!";
-    incrementWinLoss();
+    incrementWinLoss(roundWon);
   }
+
 }
 
 const calculateScore = (cards) => {
@@ -175,21 +177,21 @@ const calculateScore = (cards) => {
       hasAce = true;
       return acc + 1
     }
-    if (isNaN(card.value)) { return acc + 10 }
+    if (isNaN(card.value)) {return acc + 10 }
     return acc + Number(card.value);
   }, 0)
   if (hasAce) {
     score = (score + 10) > 21 ? score : score + 10;
   }
-  return score
+  return score;
 }
 
-const incrementWinLoss = () => {
-  if (roundLost){
+const incrementWinLoss = (round) => {
+  if (round === roundLost){
     lossCount++;
     lossesCountArea.textContent = lossCount;
   }
-  if (roundWon){
+  if (round === roundWon){
     winCount++;
     winsCountArea.textContent = winCount;
   } else if (roundTied) {return}
