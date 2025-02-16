@@ -71,7 +71,7 @@ const newGame = () => {
     dealerCards.forEach((card, i) => {
       let cardImage = document.createElement("img");
       if(i===0) {
-        cardImage.src ='./card.png'
+        cardImage.src ='./images/card.png'
       } else {
         cardImage.src = card.image;
       }
@@ -100,6 +100,8 @@ const getNewDeck = () => {
   resetPlayingArea();
   winCount = 0;
   lossCount = 0;
+  winsCountArea.textContent = "";
+  lossesCountArea.textContent = "";
   fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6')
   .then(response => response.json())
   .then(getDeckID => {

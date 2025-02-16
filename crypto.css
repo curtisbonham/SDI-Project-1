@@ -14,15 +14,18 @@
 .ticker-container {
   width: 100%;
   overflow: hidden;
-  background-color: darkslategray;
-  padding: 10px 0;
+  color: white;
+  background-color: black;
 }
 
 .ticker-text {
+  display: flex;
   white-space: nowrap;
-  animation: tickerAnimation 20s linear infinite;
+  animation: tickerAnimation 30s linear infinite;
   padding: 15px;
-}
+  color: white;
+  gap: 10px;
+  }
 
 @keyframes tickerAnimation {
   0% {
