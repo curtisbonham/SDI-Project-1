@@ -1,0 +1,38 @@
+.crypto{
+  padding: 30px;
+  border-right: 1px solid black;
+  background: darkslategray;
+  grid-row-start: 2;
+  grid-row: span 3;
+  color: darkgray;
+}
+
+.crypto > h1 {
+  font-size: 1.5em;
+}
+
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: darkslategray;
+  padding: 10px 0;
+}
+
+.ticker-text {
+  white-space: nowrap;
+  animation: tickerAnimation 20s linear infinite;
+  padding: 15px;
+}
+
+@keyframes tickerAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+

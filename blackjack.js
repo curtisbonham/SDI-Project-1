@@ -127,6 +127,7 @@ const hit = (target) => {
     roundLost = true;
     resultsArea.textContent = "You busted!! You lose the hand!!"
     incrementWinLoss(roundLost);
+    document.getElementById("hitBtn").disabled = true;
   }
 
 }
@@ -142,6 +143,7 @@ const hit = (target) => {
 }
 
 const dealersTurn = () => {
+  document.getElementById("hitBtn").disabled = true;
   dealerScore = calculateScore(dealerCards);
   dealerScoreArea.textContent = dealerScore;
   dealerCardsArea.firstChild.src = dealerCards[0].image;

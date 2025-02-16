@@ -1,11 +1,11 @@
 # SDI-Project-1
-Problem statement: Creating a website where someone can come and play a few games of blackjack while also monitoring the top 5 crypto currencies.
+Problem statement: Creating a website where someone can come and play a few games of blackjack while also monitoring the top 5 Bitcoins.
 
 # Blackjack Crypto
 
-Blackjack Crypto is more than just a game website! Sure, it's a place where anyone can come play or practice some hands of blackjack, but you can also monitor the top 5 crypto currencies. You can beat the dealer, then beat the market with up-to-date information!
+Blackjack Crypto is more than just a game website! Sure, it's a place where anyone can come play or practice some hands of blackjack, but you can also monitor the top 5 Bitcoins. You can beat the dealer, then beat the market with up-to-date information!
 
-## Instructions
+## Blackjack Instructions
 1. To start the game, press the **START NEW GAME** button.
       * The **NEXT HAND** button will become visible.
       * Press teh **NEXT HAND** button and you will be presented with two cards face up and the dealer will present a card face down and one face up.
@@ -18,6 +18,9 @@ Blackjack Crypto is more than just a game website! Sure, it's a place where anyo
 5. If your score is higher than the dealer's score or the dealer has gone over 21, **YOU WIN!!** However, if the dealer's score is higher than your score or you went over 21, **YOU LOSE!!**
 6. If you want to play again, simply press the **NEXT HAND** button and the game will restart and the dealer will keep track of your wins and losses!
       * If you happen to run out of cards, simply press teh **START NEW GAME** button and then **NEXT HAND** to keep on playing.
+
+## Crypto Instructions
+
 
 ## Kaban Board
 

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./crypto.css">
 </head>
 <body>
   <div class = "grid-container">
@@ -15,13 +16,18 @@
       <h1>Blackjack Crypto</h1>
     </header>
     <sidebar class="crypto">
-      <h1>Crypto Currency Updates</h1>
-      <p>Categories</p>
-      <li>Crypto display 1</li>
-      <li>Crypto display 2</li>
-      <li>Crypto display 3</li>
-      <li>Crypto display 4</li>
-      <li>Crypto display 5</li>
+      <h1>Crypto Currency Ticker</h1>
+      <input class="cryptoSearch" type="search" placeholder="Search Crypto Exchange">
+      <br>
+      <div class="ticker-container">
+        <div class="ticker-wrapper">
+          <div class="ticker-text" id="tickerItem1"></div>
+          <div class="ticker-text" id="tickerItem2"></div>
+          <div class="ticker-text" id="tickerItem3"></div>
+          <div class="ticker-text" id="tickerItem4"></div>
+          <div class="ticker-text" id="tickerItem5"></div>
+        </div>
+      </div>
     </sidebar>
     <section class="gameArea">
       <div id="startBtnArea">
@@ -53,6 +59,7 @@
     </footer>
   </div>
   <script src="blackjack.js"></script>
+  <script src="crypto.js"></script>
 </body>
 </html>
 

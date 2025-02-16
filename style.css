@@ -2,7 +2,6 @@ body {
   font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
-
 }
 
 ul, li {
@@ -12,7 +11,7 @@ ul, li {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 400px 3fr 1fr;
   border: 1px solid black;
 }
 
@@ -20,24 +19,8 @@ header {
   grid-column: span 3;
   justify-items: center;
   border-bottom: 1px solid black;
-  background: darkslategray;
-  color: darkgray;
-}
-
-.crypto{
-  padding: 30px;
-  border-right: 1px solid black;
-  background: dimgray;
-  grid-row-start: 2;
-  grid-row: span 3;
-}
-
-.crypto > h1 {
-  font-size: 1.5em;
-}
-
-.crypto > li {
-  text-decoration: underline;
+  background: dimgrey;
+  color: white;
 }
 
 .gameArea {
@@ -47,7 +30,6 @@ header {
   color: darkgray;
   grid-column-start: 2;
   grid-row-start: 2;
-
 }
 
 #resultsArea {
@@ -55,14 +37,6 @@ header {
   width: 100%;
   color: orange;
   grid-column: 2 / span 2;
-  justify-items: center;
-}
-
-#dealerArea {
-  justify-items: center;
-}
-
-#playerArea {
   justify-items: center;
 }
 
@@ -74,6 +48,7 @@ header {
   display: flex;
   flex-direction: column;
   background: darkolivegreen;
+  padding: 30px;
 }
 
 .winLossArea  {
@@ -99,7 +74,7 @@ header {
 .button{
   height: 50px;
   font-size: 20px;
-  width: 200px;
+  width: 150px;
   color: white;
   align-self: center;
   background-color: limegreen;
@@ -107,34 +82,17 @@ header {
   -moz-box-shadow: inset 0px 0px 14px 5px black;
   box-shadow: inset 0px 0px 14px 5px black;
 }
-#startPlayBtn {
-  width: 180px;
-}
-
-#hitBtn {
-  grid-column-start: 3;
-}
 
 #stayBtn {
-  /* grid-row-start: 1; */
   margin: 50px 0 50px 0;
-}
-
-#newGameBtn {
-  width: 205px;
 }
 
 footer {
   grid-column: 1/span 3;
   text-align: start;
   border-top: 1px solid black;
-  background: darkslategray;
-  color: darkgray;
+  background: dimgrey;
+  color: white; 
   padding: 10px;
 }
-
-
-
-
-
 
