@@ -83,7 +83,7 @@ const newGame = () => {
       cardImage.src = card.image;
       playerCardsArea.appendChild(cardImage);
     })
-    console.log(playerCards);
+
     playerScore = calculateScore(playerCards);
     if(playerScore === 21) {
       roundWon = true;
@@ -93,7 +93,7 @@ const newGame = () => {
     playerScoreArea.textContent = playerScore;
 
 })
-.catch(console.error)
+.catch(error => console.error('Error fetching data:', error));
 }
 
 const getNewDeck = () => {
@@ -141,7 +141,7 @@ const hit = (target) => {
     dealersTurn();
   }
 })
-.catch(console.error)
+.catch(error => console.error('Error fetching data:', error));
 }
 
 const dealersTurn = () => {

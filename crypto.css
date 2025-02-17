@@ -35,6 +35,44 @@
     transform: translateX(-100%);
   }
 }
+#cryptoSearch{
+  width: 250px;
+  border-radius: 8px;
+  height: 30px;
+}
+
+#searchBtn {
+  border-radius: 8px;
+  height: 30px; 
+}
+
+#searchBtn:hover {
+  background-color: green;
+}
+#searchTable {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th , td {
+  border: 1px solid;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+}
+
+th {
+  height: 50px;
+}
+
+td {
+  height: 70px;
+}
+
 
 
 

@@ -18,7 +18,8 @@ body {
 }
 
 #title {
-  margin-left: 600px;
+  justify-self: center;
+  margin-left: 50px;
 }
 
 #logo {
@@ -84,6 +85,11 @@ body {
   -webkit-box-shadow: inset 0px 0px 14px 5px black;
   -moz-box-shadow: inset 0px 0px 14px 5px black;
   box-shadow: inset 0px 0px 14px 5px black;
+  border-radius: 12px;
+}
+
+.button:hover{
+  background-color: green;
 }
 
 #stayBtn {
