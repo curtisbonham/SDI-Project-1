@@ -19,6 +19,23 @@ body {
   background-image: url(./images/headerFooterBackground.png)
 }
 
+#title {
+  font-size: 50px;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  background-image: linear-gradient(white, white);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -435px 0;
+  animation: backcolor 6s linear infinite alternate;
+}
+
+@keyframes backcolor {
+  100% {
+    background-position: 0 0;
+  }
+}
+
 #logo {
   width: 188px;
   height: 160px;
