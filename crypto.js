@@ -71,3 +71,7 @@ searchInput.addEventListener('keypress', function(event) {
 
 cryptoTicker();
 
+module.exports = {
+  cryptoTicker,
+  searchBitcoin
+}

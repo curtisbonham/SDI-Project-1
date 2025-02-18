@@ -201,5 +201,12 @@ const incrementWinLoss = (round) => {
   } else if (roundTied) {return}
 }
 
-
+module.exports = {
+  incrementWinLoss,
+  calculateScore,
+  dealersTurn,
+  getNewDeck,
+  newGame,
+  resetPlayingArea
+}
 
