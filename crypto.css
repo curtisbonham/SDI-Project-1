@@ -4,7 +4,9 @@
   background: darkslategray;
   grid-row-start: 2;
   grid-row: span 3;
-  color: darkgray;
+  color: white;
+  background-size: cover;
+  background-image: url(./images/crypto.png);
 }
 
 .crypto > h1 {
@@ -43,7 +45,9 @@
 
 #searchBtn {
   border-radius: 8px;
-  height: 30px; 
+  height: 30px;
+  background-color: purple;
+  color: white; 
 }
 
 #searchBtn:hover {
@@ -52,6 +56,7 @@
 #searchTable {
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 table {

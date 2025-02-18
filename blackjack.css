@@ -15,6 +15,8 @@ body {
   background: dimgrey;
   color: white;
   align-items: center;
+  background-size: cover;
+  background-image: url(./images/headerFooterBackground.png)
 }
 
 #title {
@@ -31,15 +33,17 @@ body {
   padding: 30px;
   background: darkolivegreen;
   justify-items: center;
-  color: darkgray;
+  color: white;
   grid-column-start: 2;
   grid-row-start: 2;
+  background-size: cover;
+  background-image: url(./images/gameAreaBackground.png);
 }
 
 #resultsArea {
   font-size: 50px;
   width: 100%;
-  color: orange;
+  color: white;
   grid-column: 2 / span 2;
   justify-items: center;
 }
@@ -53,12 +57,14 @@ body {
   flex-direction: column;
   background: darkolivegreen;
   padding: 30px;
+  background-size: cover;
+  background-image: url(./images/buttonsBackground.png);
 }
 
 .winLossArea  {
   display: flex;
   justify-content: space-evenly;
-  color: darkgray;
+  color: white;
 }
 
 #dealerCards {
@@ -81,7 +87,7 @@ body {
   width: 150px;
   color: white;
   align-self: center;
-  background-color: limegreen;
+  background-color: purple;
   -webkit-box-shadow: inset 0px 0px 14px 5px black;
   -moz-box-shadow: inset 0px 0px 14px 5px black;
   box-shadow: inset 0px 0px 14px 5px black;
@@ -103,5 +109,7 @@ footer {
   background: dimgrey;
   color: white;
   padding: 10px;
+  background-size: cover;
+  background-image: url(./images/footerBackground.png)
 }
 
